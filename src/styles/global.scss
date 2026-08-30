@@ -72,6 +72,27 @@ footer {
   }
 }
 
+#backTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgb(99, 169, 255);
+  border: 1px solid rgb(99, 169, 255);
+  box-shadow: 0 0 10px 4px rgba(51, 122, 183, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s;
+  z-index: 1000;
+}
+
+#backTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
 a {
   text-decoration: none;
   transition: all 0.3s ease-in-out;

@@ -32,6 +32,26 @@ import { ClientRouter } from "astro:transitions";
     <div class="container">
       <slot />
     </div>
+    <button id="backTop" class="btn btn-primary"
+      ><Icon name="mdi:arrow-top" style="height:28px; width:20px" />
+    </button>
     <Footer />
-  </body>
+  </body><script>
+    const backTop = document.getElementById("backTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 100) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+    });
+
+    backTop.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  </script>
 </html>
