@@ -1,0 +1,37 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+  <h2>医学论文</h2>
+  <div class="list-group">
+    <a href="javascript:void(0)" class="list-group-item active">
+      <h4 class="list-group-item-heading">
+        中华医学期刊全文数据库（上海图书馆）
+      </h4>
+    </a>
+    <a
+      href="https://z.library.sh.cn/go?url=http://www.yiigle.com/index"
+      target="_blank"
+      class="list-group-item"
+    >
+      <h4 class="list-group-item-heading">
+        馆外访问 <Icon name="mdi:open-in-new" />
+      </h4>
+      <p class="list-group-item-text">成为上海图书馆读者以访问。</p>
+    </a>
+    <a
+      href="https://z.library.sh.cn/go-anonymous?url=http://www.yiigle.com/index"
+      target="_blank"
+      class="list-group-item"
+    >
+      <h4 class="list-group-item-heading">
+        馆内访问 <Icon name="mdi:open-in-new" />
+      </h4>
+      <p class="list-group-item-text">
+        成为上海图书馆读者，并在图书馆内连接无线局域网以访问。
+      </p>
+    </a>
+  </div>
+</Layout>
