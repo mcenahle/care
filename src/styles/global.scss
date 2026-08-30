@@ -39,6 +39,15 @@ footer {
   line-height: 1.6em;
 }
 
+.navbar-default {
+  background-color: rgba(138, 146, 255, 0.349);
+  border: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
 .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > .active > a:hover {
