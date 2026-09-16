@@ -2,28 +2,37 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<footer>
-  <div id="footer-text">
-    <hr />
-    <p class="text-center">
-      © 2026 mcenahle.care。保留所有权利。<small
-        >背景图片拍摄于上海市图书馆（东馆）6楼。</small
+<div class="ucla-global-footer">
+  <div class="ucla-global-footer__container">
+    <p class="ucla-global-footer__copyright">
+      &copy; <span id="ucla-global-footer__copyright-year"> </span> mcenahle.care.
+      Made by
+      <a
+        class="copy__link-a dark"
+        style="margin-left: 4px;"
+        href="https://designsystem.brand.ucla.edu/"
+        target="_blank"
+        >the design system of UCLA <Icon name="mdi:open-in-new" /></a
       >
     </p>
-    <p class="text-center">
-      本网站不使用 Cookie。We do not use cookies. We eat apples instead.
-    </p>
-    <a
-      href="https://qname.ai/zh/age/mcenahle.care"
-      target="_blank"
-      rel="noreferrer"
-      style="justify-content: center; display: flex;"
-    >
-      <img
-        src="https://qname.ai/api/badge/domain-age/mcenahle.care?theme=spotify&lang=zh"
-        alt="Domain age badge for mcenahle.care"
-      />
-    </a>
-    <br />
+
+    <ul class="ucla-global-footer__list">
+      <li class="ucla-global-footer__list-item">
+        <a class="ucla-global-footer__link" href="https://mcenahle.page/"
+          >mcenahle.page <Icon name="mdi:open-in-new" /></a
+        >
+      </li>
+      <li class="ucla-global-footer__list-item">
+        <a class="ucla-global-footer__link" href="https://mcenahle.dev/"
+          >mcenahle.dev <Icon name="mdi:open-in-new" /></a
+        >
+      </li>
+    </ul>
   </div>
-</footer>
+</div>
+
+<script>
+  document
+    .getElementById("ucla-global-footer__copyright-year")
+    .appendChild(document.createTextNode(new Date().getFullYear()));
+</script>

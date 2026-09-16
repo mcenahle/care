@@ -3,55 +3,28 @@ import "../styles/global.scss";
 import { Icon } from "astro-icon/components";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-import { ClientRouter } from "astro:transitions";
+
+import "ucla-design-systems/build/css/ucla-lib.min.css";
 ---
 
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"
-    ></script>
-
     <title>mcenahle.care</title>
-    <ClientRouter />
   </head>
   <body>
     <Navbar />
-    <div class="container">
-      <slot />
-    </div>
-    <button id="backTop" class="btn btn-primary"
-      ><Icon name="mdi:arrow-top" style="height:28px; width:20px" />
-    </button>
+    <slot />
     <Footer />
-  </body><script>
-    const backTop = document.getElementById("backTop");
+  </body>
 
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        backTop.classList.add("show");
-      } else {
-        backTop.classList.remove("show");
-      }
-    });
+  <script>
+    import { Navigation } from "ucla-design-systems/build/js/ucla-lib-scripts.esm.js";
 
-    backTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
+    Navigation.initAll();
   </script>
 </html>
