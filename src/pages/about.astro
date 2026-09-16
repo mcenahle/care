@@ -1,0 +1,271 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<Layout>
+  <article>
+    <div class="section section--tight">
+      <div class="container">
+        <!-- 面包屑 -->
+        <nav class="breadcrumb" aria-label="面包屑">
+          <ol style="padding-left: 0px;">
+            <li><a href="index.html">首页</a></li>
+            <li><span aria-current="page">关于</span></li>
+          </ol>
+        </nav>
+
+        <!-- 文章标题区 -->
+        <header class="article-header">
+          <h1 class="article-title">关于</h1>
+          <ul class="article-meta">
+            <li>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                ><rect x="3" y="4" width="18" height="18" rx="2"></rect><path
+                  d="M16 2v4M8 2v4M3 10h18"></path></svg
+              >
+              <time datetime="2026-09-16">2026-09-16</time>
+            </li>
+            <li>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                ><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"
+                ></path></svg
+              >
+              约 2 分钟读完
+            </li>
+            <li>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                ><circle cx="12" cy="8" r="4"></circle><path
+                  d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path></svg
+              >
+              mcenahle
+            </li>
+          </ul>
+        </header>
+        <br />
+
+        <!-- ===================== 正文（.prose 控制长文排版） ===================== -->
+        <div class="prose">
+          <p class="lead">
+            把耳朵贴在胸口，听到的那两声「咚—嗒」，其实是一场精确到毫秒的协同运动。
+            这篇笔记把<strong>心动周期（cardiac cycle）</strong>拆成四个阶段，
+            并尝试回答一个困扰我很久的问题：瓣膜到底是“被推开”的，还是自己会动？
+          </p>
+
+          <h2 id="what-happens">一次心动周期里发生了什么</h2>
+          <p>
+            一次心动周期，指的是从一次心跳开始到下一次心跳开始之间，心脏发生的全部机械事件。
+            以安静状态下心率约 75 次/分为例，一个周期大约持续 0.8
+            秒。我最初的困惑是：
+            教材上一会儿说“收缩”，一会儿说“瓣膜关闭”，它们的先后关系到底如何？
+            后来发现，<a href="#"
+              ><u>抓住压力差这条主线</u> <Icon name="mdi:open-in-new" /></a
+            >
+            ，很多问题会迎刃而解。
+          </p>
+
+          <h3 id="systole">收缩期：心室把血泵出去</h3>
+          <p>
+            心室开始收缩后，心室内压力迅速升高。当室内压超过心房内压，房室瓣被推着关闭，
+            产生我们听到的第一心音 <abbr title="第一心音，标志心室收缩期开始"
+              >S1</abbr
+            >——
+            也就是那声低沉的「咚」。此时半月瓣还没打开，心室在一个封闭空间里继续升压，
+            这段极短的时期称为<strong>等容收缩期</strong>。
+          </p>
+          <ul>
+            <li>
+              室内压升高 → 房室瓣关闭 → 产生 <abbr title="第一心音">S1</abbr>；
+            </li>
+            <li>半月瓣需要等室内压超过动脉压后才被冲开；</li>
+            <li>“等容”的意思是：瓣膜都关着，心室容积暂时不变，只改变压力。</li>
+          </ul>
+
+          <h3 id="diastole">舒张期：心室重新被灌满</h3>
+          <p>
+            射血结束后心室开始松弛，室内压掉到低于动脉压，回流的血液把半月瓣冲闭，
+            产生第二心音 <abbr title="第二心音，标志心室舒张期开始">S2</abbr>——
+            那声更清脆的「嗒」。随后房室瓣打开，心房里积攒的血液快速流入心室。
+          </p>
+
+          <blockquote>
+            <p>
+              瓣膜本身不会主动开关，它们只顺从压力差。谁的压力大，血液就推动瓣膜朝向压力小的那一侧。
+            </p>
+            <cite
+              >—— 我在《人体生理学》第 14 章页边写的一句话，想通这点后整章都顺了</cite
+            >
+          </blockquote>
+
+          <div class="alert alert-info" role="note">
+            <span class="alert-icon" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><circle cx="12" cy="12" r="9"></circle><path
+                  d="M12 11v5M12 8h.01"></path></svg
+              >
+            </span>
+            <div>
+              <p class="alert-title">学习提示</p>
+              <p>
+                不要死记瓣膜名称的先后顺序，记「压力反超」这个动作：哪一侧压力反超，哪一侧的瓣膜就关闭。
+              </p>
+            </div>
+          </div>
+
+          <h2 id="four-phases">用一张表对齐四个阶段</h2>
+          <p>
+            下表是我复习时反复核对过的简化版本，以左心室为例。注意各期持续时间并不相等，舒张期通常比收缩期更长。
+          </p>
+
+          <div class="table-wrap">
+            <table class="table">
+              <caption
+                >表 1 · 左心室心动周期的四个阶段（简化，安静状态）</caption
+              >
+              <thead>
+                <tr>
+                  <th scope="col">阶段</th>
+                  <th scope="col">房室瓣</th>
+                  <th scope="col">半月瓣</th>
+                  <th scope="col">主要事件</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>等容收缩期</td>
+                  <td>关闭</td>
+                  <td>关闭</td>
+                  <td>心室升压，容积不变；S1 出现</td>
+                </tr>
+                <tr>
+                  <td>射血期</td>
+                  <td>关闭</td>
+                  <td>开放</td>
+                  <td>血液被快速射入主动脉</td>
+                </tr>
+                <tr>
+                  <td>等容舒张期</td>
+                  <td>关闭</td>
+                  <td>关闭</td>
+                  <td>心室松弛降压；S2 出现</td>
+                </tr>
+                <tr>
+                  <td>心室充盈期</td>
+                  <td>开放</td>
+                  <td>关闭</td>
+                  <td>心房血液流入心室，末期心房收缩补量</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>
+            我在笔记本里把它画成了一条按毫秒对齐的时间轴，这里用文字简化表示：
+          </p>
+
+          <pre><code>0 ms    心室开始收缩，室内压上升
+约 50   房室瓣关闭 → S1（咚）
+约 100  半月瓣开放，开始射血
+约 300  半月瓣关闭 → S2（嗒），进入舒张期
+约 450  房室瓣开放，心室快速充盈
+800 ms  一个周期结束，回到起点</code></pre>
+
+          <h2 id="misunderstandings">初学者常见的三个误解</h2>
+          <ol>
+            <li>
+              <strong>“动脉里流动的一定是动脉血。”</strong> 动脉与静脉按血流方向定义（离开
+              / 回到心脏），含氧量是另一回事，肺动脉里流的就是缺氧血。
+            </li>
+            <li>
+              <strong>“心脏是自己不停跳的，不需要神经。”</strong> 节律确实由窦房结发起，但交感与副交感神经一直在调节心率和收缩力。
+            </li>
+            <li>
+              <strong>“收缩期比舒张期长。”</strong> 安静状态下恰恰相反，舒张期更长，这也是心肌获得休息和灌注的窗口。
+            </li>
+          </ol>
+
+          <figure>
+            <img
+              src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=Detailed%20scientific%20illustration%20of%20a%20kidney%20nephron%2C%20teal%20and%20emerald%20ink%20on%20aged%20paper%2C%20vintage%20medical%20textbook%20diagram%20with%20fine%20labels%20and%20hatching&image_size=landscape_4_3"
+              alt="青绿色墨水绘制的肾单位结构示意图"
+              width="800"
+              height="600"
+              loading="lazy"
+            />
+            <figcaption>
+              图 1 ·
+              练习：肾单位也有“压力差驱动的阀门”思想——试着用同样的方法分析肾小球滤过。
+            </figcaption>
+          </figure>
+
+          <div class="alert alert-warning" role="note">
+            <span class="alert-icon" aria-hidden="true">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path
+                  d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"
+                ></path><path d="M12 9v4M12 17h.01"></path></svg
+              >
+            </span>
+            <div>
+              <p class="alert-title">延伸提醒</p>
+              <p>
+                如果你在现实中听到自己的心音或脉搏异常，请勿根据笔记自我诊断，正规的听诊与检查需要由医生完成。
+              </p>
+            </div>
+          </div>
+
+          <h2 id="summary">小结</h2>
+          <p>
+            一次「咚—嗒」之间，心脏完成了升压、射血、松弛、充盈四件事，而瓣膜只是忠实跟随压力差。
+            下次复习时，我打算把<em>心输出量 = 每搏输出量 × 心率</em
+            >和运动后的心率变化连起来再写一篇。
+            也欢迎你带着这篇笔记里的表格，去听听自己的心跳。
+          </p>
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

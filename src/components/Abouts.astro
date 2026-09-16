@@ -1,0 +1,100 @@
+<section class="section band" id="about">
+  <div class="container split">
+    <div>
+      <span class="eyebrow">关于本站</span>
+      <h2>一个业余学习者的「医学实验记录本」</h2>
+      <p class="muted mt-4">
+        我是 mcenahle，白天写代码，晚上读人体。这个网站不追热点、不做科普噱头，
+        只是把我从零自学医学和生物学的过程老老实实记下来：读到哪里、哪里没懂、
+        后来怎样想通。
+      </p>
+      <p class="muted mt-4">
+        你会在这里看到读书笔记、手绘示意图、显微镜观察，以及我反复修改的术语表。
+        理解若有偏差，欢迎通过页脚的邮箱指正。
+      </p>
+      <div class="actions mt-5">
+        <a class="btn btn-outline" href="article.html">先读一篇文章试试</a>
+      </div>
+    </div>
+
+    <!-- 表单组件演示（同时也是真实可用的订阅区块结构） -->
+    <form class="form-card" id="subscribe" action="#" method="get" novalidate>
+      <h3>通过邮件收到更新</h3>
+      <p class="muted small mt-2 mb-5">
+        大约每月 1～2 封，只发新笔记与学习总结。
+      </p>
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label class="form-label" for="nickname">昵称</label>
+          <input
+            class="form-input"
+            id="nickname"
+            name="nickname"
+            type="text"
+            placeholder="怎么称呼你？"
+          />
+        </div>
+
+        <!-- has-error：展示表单校验失败时的错误状态 -->
+        <div class="form-field has-error">
+          <label class="form-label" for="email"
+            >邮箱
+            <span class="required" aria-hidden="true">*</span></label
+          >
+          <input
+            class="form-input"
+            id="email"
+            name="email"
+            type="email"
+            required
+            value="mcenahle@"
+            aria-describedby="email-error"
+          />
+          <span class="form-error" id="email-error"
+            >请输入完整的邮箱地址，例如 name@example.com</span
+          >
+        </div>
+
+        <div class="form-field full-span">
+          <label class="form-label" for="topic">最感兴趣的方向</label>
+          <select class="form-select" id="topic" name="topic">
+            <option>请选择一个方向</option>
+            <option>解剖与生理</option>
+            <option>细胞与遗传</option>
+            <option>神经科学</option>
+            <option>学习方法与工具</option>
+          </select>
+          <span class="form-help">仅用于调整内容比重，不会用于其他用途。</span>
+        </div>
+
+        <fieldset class="form-fieldset full-span">
+          <legend>希望多久收到一次？</legend>
+          <div class="form-check-list">
+            <label class="form-check">
+              <input type="radio" name="frequency" value="weekly" checked />
+              <span>每周更新（有新笔记时发送）</span>
+            </label>
+            <label class="form-check">
+              <input type="radio" name="frequency" value="monthly" />
+              <span>每月汇总（一封月报即可）</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="form-check full-span">
+          <input type="checkbox" name="agree" required />
+          <span
+            >我已阅读并理解<a href="#about">内容声明</a
+            >，知道本站内容不构成医疗建议。</span
+          >
+        </label>
+
+        <div class="full-span actions actions--spread">
+          <button class="btn btn-primary" type="submit">订阅更新</button>
+          <span class="form-help">演示表单，不会真正提交</span>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

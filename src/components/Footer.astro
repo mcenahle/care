@@ -1,29 +1,60 @@
----
-import { Icon } from "astro-icon/components";
----
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true">
+            <svg
+              width="19"
+              height="19"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 12h4l2.5-7 5 14L17 12h4"></path>
+            </svg>
+          </span>
+          <span>mcenahle<em>.care</em></span>
+        </a>
+        <p>一个普通人自学医学与生物学的公开笔记本。保持好奇，也保持敬畏。</p>
+      </div>
 
-<footer>
-  <div id="footer-text">
-    <hr />
-    <p class="text-center">
-      © 2026 mcenahle.care。保留所有权利。<small
-        >背景图片拍摄于上海市图书馆（东馆）6楼。</small
-      >
-    </p>
-    <p class="text-center">
-      本网站不使用 Cookie。We do not use cookies. We eat apples instead.
-    </p>
-    <a
-      href="https://qname.ai/zh/age/mcenahle.care"
-      target="_blank"
-      rel="noreferrer"
-      style="justify-content: center; display: flex;"
-    >
-      <img
-        src="https://qname.ai/api/badge/domain-age/mcenahle.care?theme=spotify&lang=zh"
-        alt="Domain age badge for mcenahle.care"
-      />
-    </a>
-    <br />
+      <nav aria-label="页脚：内容">
+        <h4 class="footer-title">内容</h4>
+        <ul class="footer-list">
+          <li><a href="#notes">学习笔记</a></li>
+          <li><a href="#topics">解剖图谱</a></li>
+          <li><a href="#">术语表</a></li>
+          <li><a href="#">全部归档</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="页脚：站点">
+        <h4 class="footer-title">站点</h4>
+        <ul class="footer-list">
+          <li><a href="#about">关于我</a></li>
+          <li><a href="#">学习书单</a></li>
+          <li><a href="#">更新日志</a></li>
+          <li><a href="#subscribe">邮件订阅</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="页脚：其他">
+        <h4 class="footer-title">其他</h4>
+        <ul class="footer-list">
+          <li><a href="mailto:hello@mcenahle.care">写信给我</a></li>
+          <li><a href="#">RSS 订阅</a></li>
+          <li><a href="#">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 mcenahle.care · 内容仅供个人学习交流</span>
+      <span><a href="#">隐私说明</a> · <a href="#">内容声明</a></span>
+    </div>
   </div>
 </footer>

@@ -1,0 +1,124 @@
+---
+import Layout from "./Layout.astro";
+import AuthorCard from "../components/AuthorCard.astro";
+import PostAndNext from "../components/PostAndNext.astro";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  category: string;
+  date: string;
+  author: string;
+  readTime: string;
+  picture: string;
+  pictureAlt: string;
+  tags: string;
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<title>{frontmatter.title}</title>
+
+<Layout>
+  <article>
+    <div class="section section--tight">
+      <div class="container">
+        <!-- 面包屑 -->
+        <nav class="breadcrumb" aria-label="面包屑">
+          <ol style="padding-left: 0px;">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="index.html#notes">学习笔记</a></li>
+            <li><a href="#">{frontmatter.category}</a></li>
+            <li><span aria-current="page">{frontmatter.title}</span></li>
+          </ol>
+        </nav>
+
+        <!-- 文章标题区 -->
+        <header class="article-header">
+          <span class="tag">{frontmatter.category}</span>
+          <h1 class="article-title">
+            {frontmatter.title}
+          </h1>
+          <ul class="article-meta">
+            <li>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                ><rect x="3" y="4" width="18" height="18" rx="2"></rect><path
+                  d="M16 2v4M8 2v4M3 10h18"></path></svg
+              >
+              <time datetime={frontmatter.date}>{frontmatter.date}</time>
+            </li>
+            <li>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                ><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"
+                ></path></svg
+              >
+              约 {frontmatter.readTime} 分钟读完
+            </li>
+            <li>
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                ><circle cx="12" cy="8" r="4"></circle><path
+                  d="M4 21c0-4 3.6-6 8-6s8 2 8 6"></path></svg
+              >
+              mcenahle
+            </li>
+          </ul>
+        </header>
+
+        <!-- 封面图 -->
+        <figure class="article-cover">
+          <img
+            src={frontmatter.picture}
+            alt={frontmatter.pictureAlt}
+            width="1344"
+            height="576"
+            fetchpriority="high"
+          />
+        </figure>
+
+        <!-- ===================== 正文（.prose 控制长文排版） ===================== -->
+        <div class="prose">
+          <p class="lead">
+            <slot />
+          </p>
+
+          <!-- 文末标签 -->
+          <div class="article-tags">
+            <span class="tag tag--muted">{frontmatter.tags}</span>
+          </div>
+
+          <AuthorCard />
+
+          <PostAndNext />
+        </div>
+      </div>
+    </div>
+  </article>
+</Layout>

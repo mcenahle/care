@@ -1,57 +1,38 @@
 ---
-import "../styles/global.scss";
+import "../styles/care.css";
 import { Icon } from "astro-icon/components";
 import Navbar from "../components/Navbar.astro";
+import Infos from "../components/Infos.astro";
+import Notes from "../components/Notes.astro";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 ---
 
+<!doctype html>
 <html lang="zh-CN">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="generator" content={Astro.generator} />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mcenahle.care — 一个业余医学爱好者的学习档案</title>
+    <meta
+      name="description"
+      content="mcenahle.care 是个人医学与生物学学习记录站点：读书笔记、手绘图谱与实验观察。"
     />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"
-    ></script>
-
-    <title>mcenahle.care</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230e7c72'/%3E%3Cpath d='M5 17h5l2.5-7 5 14L20.5 17H27' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"
+    />
+    <script is:inline src="/js/main.js" defer></script>
     <ClientRouter />
   </head>
+
   <body>
+    <!-- 键盘用户跳过导航直达正文 -->
+    <a class="skip-link" href="#main">跳到主要内容</a>
     <Navbar />
-    <div class="container">
+    <main id="main">
       <slot />
-    </div>
-    <button id="backTop" class="btn btn-primary"
-      ><Icon name="mdi:arrow-top" style="height:28px; width:20px" />
-    </button>
+    </main>
     <Footer />
-  </body><script>
-    const backTop = document.getElementById("backTop");
-
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
-        backTop.classList.add("show");
-      } else {
-        backTop.classList.remove("show");
-      }
-    });
-
-    backTop.addEventListener("click", () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-    });
-  </script>
+  </body>
 </html>
