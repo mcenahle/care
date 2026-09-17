@@ -1,0 +1,121 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const POSTS_PER_PAGE = 10;
+
+const allPosts = Object.values(
+  import.meta.glob("../*.md", { eager: true }),
+).sort(
+  (a: any, b: any) =>
+    new Date(b.frontmatter.pubDate).getTime() -
+    new Date(a.frontmatter.pubDate).getTime(),
+);
+
+const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+export function getStaticPaths() {
+  const POSTS_PER_PAGE = 10;
+
+  const allPosts = Object.values(import.meta.glob("../*.md", { eager: true }));
+
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+  return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
+    params: {
+      page: String(i + 2),
+    },
+  }));
+}
+
+const currentPage = Number(Astro.params.page);
+
+const posts = allPosts.slice(
+  (currentPage - 1) * POSTS_PER_PAGE,
+  currentPage * POSTS_PER_PAGE,
+);
+---
+
+<Layout>
+  <div class="container">
+    <h2>医学相关文章</h2>
+
+    <p>mcenahle.care 医学相关文章</p>
+
+    <article class="ucla-card ucla-card__story">
+      {
+        posts.map((post: any) => (
+          <div class="ucla-card__body">
+            <p class="ucla-card__date">{post.frontmatter.pubDate}</p>
+            <h3 class="ucla-card__title">
+              <a
+                class="ucla-card__title-link"
+                href={post.url}
+                title={post.frontmatter.title}
+              >
+                {post.frontmatter.title}
+              </a>
+            </h3>
+            <p class="ucla-card__author">By {post.frontmatter.author}</p>
+            <p class="ucla-card__description">{post.frontmatter.description}</p>
+          </div>
+        ))
+      }
+    </article>
+
+    <!-- <nav class="usa-pagination" aria-label="分页">
+      <ul class="usa-pagination__list">
+        {
+          currentPage > 1 && (
+            <li class="usa-pagination__item usa-pagination__arrow">
+              <a
+                href={
+                  currentPage === 2
+                    ? "/posts/"
+                    : `/posts/page/${currentPage - 1}/`
+                }
+                class="usa-pagination__link usa-pagination__previous-page"
+                aria-label="上一页"
+              >
+                <span class="usa-pagination__link-text">上一页</span>
+              </a>
+            </li>
+          )
+        }
+
+        {
+          Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+            <li class="ucla-pagination--list-item">
+              <a
+                class="ucla-pagination--page"
+                class:list={[
+                  "ucla-pagination--button",
+                  { "ucla-current": page === currentPage },
+                ]}
+                href={page === 1 ? "/posts/" : `/posts/page/${page}/`}
+                aria-current={page === currentPage ? "page" : undefined}
+                aria-label={`第 ${page} 页`}
+              >
+                {page}
+              </a>
+            </li>
+          ))
+        }
+
+        {
+          currentPage < totalPages && (
+            <li class="ucla-pagination--list-item">
+              <a
+                class="ucla-pagination--page"
+                href={`/posts/page/${currentPage + 1}/`}
+                aria-label="下一页"
+              >
+                下一页
+              </a>
+            </li>
+          )
+        }
+      </ul>
+    </nav> -->
+  </div>
+</Layout>

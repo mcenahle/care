@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+const { frontmatter } = Astro.props;
+---
+
+<meta charset="utf-8" />
+<Layout>
+  <div class="container">
+    <nav class="ucla-breadcrumb">
+      <ul class="ucla-breadcrumb__list">
+        <li class="ucla-breadcrumb__list-item">
+          <a class="ucla-breadcrumb__link" href="/">首页</a>
+        </li>
+        <li class="ucla-breadcrumb__list-item">
+          <a class="ucla-breadcrumb__link" href="/posts/">医学相关文章</a>
+        </li>
+        <li
+          class="ucla-breadcrumb__list-item"
+          style="word-break: break-all !important;"
+        >
+          <a class="ucla-breadcrumb__link" href="javascript:void(0)"
+            >{frontmatter.title}</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <h2 style="text-align: center; font-size: 30px; margin-top: 30px;">
+      {frontmatter.title}
+    </h2>
+
+    <div class="post-meta">
+      <span>
+        <Icon name="mdi:account-edit" />&nbsp;
+        {frontmatter.author}
+      </span>
+
+      <span>
+        <Icon name="mdi:calendar" />&nbsp;
+        {frontmatter.pubDate}
+      </span>
+    </div>
+
+    <div class="posts" style="margin-bottom: 30px;">
+      <slot />
+    </div>
+
+    <a href="/" class="ucla-btn ucla-btn--primary ucla-btn--icon-lead">
+      <Icon name="mdi:arrow-left" /> 返回首页</a
+    >
+
+    <button
+      id="ask-gpt"
+      type="button"
+      class="ucla-btn ucla-btn--secondary ucla-btn--icon-lead"
+      style="margin-left: 6px;"
+    >
+      <Icon name="bi:openai" /> 询问 ChatGPT</button
+    >
+  </div>
+
+  <script>
+    document.querySelector("#ask-gpt")?.addEventListener("click", () => {
+      const pageUrl = window.location.href;
+      const prompt = `阅读 ${pageUrl}，然后回答这个问题：`;
+      const url = `https://chatgpt.com/?prompt=${encodeURIComponent(prompt)}`;
+
+      window.open(url, "_blank");
+    });
+  </script>
+
+  <style is:global>
+    .posts > .usa-table {
+      font-family: "MN Source Han Serif SC", serif;
+    }
+  </style>
+</Layout>

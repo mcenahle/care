@@ -67,3 +67,28 @@ u {
     box-shadow: 0 5px 10px rgb(0 0 0 / 33%);
   }
 }
+
+.posts {
+  text-indent: 2em;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "MN Source Han Serif SC", serif;
+  a {
+    text-decoration: underline !important;
+  }
+  p {
+    font-size: 18px;
+    line-height: 34px;
+  }
+}
+
+.post-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  color: #000000;
+  font-size: 16px;
+}
