@@ -1,3 +1,6 @@
+@import url("/fonts/source-han-serif/regular/result.css");
+@import url("/fonts/source-han-serif/bold/result.css");
+
 html {
   scroll-behavior: smooth;
 }
@@ -91,4 +94,55 @@ u {
   gap: 8px 20px;
   color: #000000;
   font-size: 16px;
+}
+
+@font-face {
+  font-family: "JetBrainsMono-Regular";
+  src: url("https://www.mcenahle.org.cn/fonts/JetBrainsMono-Regular.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+code {
+  overflow-wrap: anywhere;
+  background-color: transparent !important;
+  font-size: 100%;
+  margin-left: 4px;
+  margin-right: 4px;
+  color: #333333;
+  font-family: "JetBrainsMono-Regular" !important;
+}
+
+blockquote {
+  border-left: 5px solid #b3b3b3;
+  margin: 20px 0 20px 0;
+  padding: 0 16px;
+  font-size: 18px;
+}
+
+.posts a {
+  color: #00598c;
+  &:hover {
+    color: #0079bf;
+  }
+  &:active {
+    color: #003b5c;
+  }
+}
+
+.external-link::after {
+  content: "";
+  display: inline-block;
+
+  width: 1em;
+  height: 1em;
+  margin-left: 0.2em;
+
+  vertical-align: -0.125em;
+
+  background-color: currentColor;
+
+  -webkit-mask: url("/images/open-in-new.svg") center / contain no-repeat;
+  mask: url("/images/open-in-new.svg") center / contain no-repeat;
 }
