@@ -196,9 +196,11 @@ ol {
   margin: 0rem 0 0 1.5rem !important;
 }
 
-li {
-  margin-top: 4px;
-  margin-bottom: 4px;
+.container {
+  li {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
 }
 
 li + li {
