@@ -61,3 +61,9 @@ a:not([class]):visited {
 u {
   text-decoration: underline;
 }
+
+@media (max-width: 959px) {
+  .ucla-main-nav {
+    box-shadow: 0 5px 10px rgb(0 0 0 / 33%);
+  }
+}
