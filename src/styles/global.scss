@@ -80,9 +80,44 @@ u {
   a {
     text-decoration: underline !important;
   }
-  p {
+  p,
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: 18px;
     line-height: 34px;
+  }
+  li,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  img {
+    text-indent: 0em;
+  }
+
+  img {
+    max-width: 100%;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px auto;
+  }
+
+  ol {
+    margin: 0rem 0 0 2.5rem;
+  }
+
+  li {
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 }
 
