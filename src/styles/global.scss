@@ -77,9 +77,11 @@ u {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: "MN Source Han Serif SC", serif;
+
   a {
     text-decoration: underline !important;
   }
+
   p,
   li,
   h1,
@@ -91,16 +93,6 @@ u {
     font-size: 18px;
     line-height: 34px;
   }
-  li,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  img {
-    text-indent: 0em;
-  }
 
   img {
     max-width: 100%;
@@ -109,15 +101,6 @@ u {
     justify-content: center;
     align-items: center;
     margin: 4px auto;
-  }
-
-  ol {
-    margin: 0rem 0 0 2.5rem;
-  }
-
-  li {
-    margin-top: 4px;
-    margin-bottom: 4px;
   }
 }
 
@@ -192,4 +175,32 @@ blockquote {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+b {
+  font-weight: bolder;
+}
+
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img {
+  text-indent: 0em;
+}
+
+ol {
+  margin: 0rem 0 0 1.5rem !important;
+}
+
+li {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+li + li {
+  margin-top: 0rem !important;
 }
