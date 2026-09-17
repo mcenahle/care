@@ -30,3 +30,15 @@ h3 {
   height: 18px;
   flex-shrink: 0;
 }
+
+a {
+  text-decoration: none !important;
+  &:hover,
+  &:focus {
+    text-decoration: none !important;
+  }
+}
+
+u {
+  text-decoration: underline;
+}
