@@ -39,6 +39,11 @@ a {
   }
 }
 
+a:not([class]):visited {
+  color: #00598c !important;
+  text-decoration: underline;
+}
+
 u {
   text-decoration: underline;
 }
