@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div class="review-width">
+  <article class="ucla-card ucla-card__person">
+    <a class="ucla-card__image-link" href="javascript:void(0)"
+      ><img
+        class="ucla-card__image"
+        src="https://avatars.githubusercontent.com/u/85427807?v=4&size=64"
+        alt="GitHub avatar"
+      /></a
+    >
+    <div class="ucla-card__body">
+      <h1 class="ucla-card__title">
+        <a class="ucla-card__name-link" href="javascript:void(0)">Mcenahle</a>
+      </h1>
+      <h2 class="ucla-card__person-pronouns">He/Him</h2>
+      <h2 class="ucla-card__person-department">Student, Developer</h2>
+      <p class="ucla-card__description">
+        大学的专业无法决定自己真正喜欢什么，从事什么。
+      </p>
+      <dl class="ucla-card__person-contact">
+        <dt>Email</dt>
+        <dd>
+          <a href="mailto:hi@mcenahle.page"
+            ><u>hi@mcenahle.page</u> <Icon name="mdi:open-in-new" /></a
+          >
+        </dd>
+        <dt>School</dt>
+        <dd style="text-decoration: line-through;">
+          Shanghai Film Art Academy
+        </dd>
+        <dt>School</dt>
+        <dd style="background-color: gold;">Shanghai Normal University</dd>
+      </dl>
+      <em class="ucla-card__person-credit">Photo Credit: GitHub profile</em>
+    </div>
+  </article>
+</div>
+
+<style>
+  .review-width {
+    margin: 0 auto;
+    padding: 2rem 0 2rem 0;
+    display: block;
+  }
+  .review-width:has(.ucla-card) {
+    max-width: 376px;
+  }
+  .review-width:has(.ucla-card__story-featured) {
+    max-width: 1176px;
+  }
+  .review-width:has(.ucla-card__story-secondary) {
+    max-width: 576px;
+  }
+</style>
