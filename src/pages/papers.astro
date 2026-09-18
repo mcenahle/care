@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+
+const title = "医学论文";
 ---
 
-<Layout>
+<Layout title={title}>
   <div class="container">
-    <h2>医学论文</h2>
+    <h2>{title}</h2>
     <h3>中华医学期刊全文数据库（上海图书馆）</h3>
     <a
       class="ucla-related-link"

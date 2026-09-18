@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 ---
 
 <meta charset="utf-8" />
-<Layout>
+<Layout title={frontmatter.title}>
   <div class="container">
     <nav class="ucla-breadcrumb">
       <ul class="ucla-breadcrumb__list">

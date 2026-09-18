@@ -14,11 +14,13 @@ const allPosts = Object.values(
 
 const posts = allPosts.slice(0, POSTS_PER_PAGE);
 const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+const title = "医学相关文章";
 ---
 
-<Layout>
+<Layout title={title}>
   <div class="container">
-    <h2>医学相关文章</h2>
+    <h2>{title}</h2>
 
     <p>mcenahle.care 医学相关文章</p>
 
