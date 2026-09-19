@@ -18,7 +18,7 @@ footer {
 .container {
   width: 1200px !important;
   max-width: 100% !important;
-  margin: 20px auto !important;
+  margin: 20px auto 80px auto !important;
   padding-inline: 1.5rem;
 }
 
@@ -147,6 +147,22 @@ blockquote {
   &:active {
     color: #003b5c;
   }
+}
+
+.ucla-dept-footer__nav a:not([class]),
+.ucla-dept-footer a:not([class]),
+.ucla-dept-footer__nav a:not([class]):focus,
+.ucla-dept-footer a:not([class]):focus,
+.ucla-dept-footer__nav a:not([class]):visited,
+.ucla-dept-footer a:not([class]):visited {
+  color: white !important;
+}
+
+.ucla-dept-footer__nav a:not([class]):hover,
+.ucla-dept-footer a:not([class]):hover,
+.ucla-dept-footer__nav a:not([class]):active,
+.ucla-dept-footer a:not([class]):active {
+  color: black !important;
 }
 
 .external-link::after {
